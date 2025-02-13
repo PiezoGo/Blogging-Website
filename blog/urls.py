@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('blog2.urls')),
     path('post/new', include('blog2.urls')),
     path('post/<int:pk>/', include('blog2.urls')),
+    path('post/<int:pk>/edit/', include('blog2.urls')),
 ]
