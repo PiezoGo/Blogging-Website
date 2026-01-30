@@ -10,7 +10,7 @@ Simple Templates: Basic HTML templates for rendering pages, with potential for e
 
 ## Technologies Used
 
--Backend: Django (Python framework)
+- Backend: Django (Python framework)
 - Database: SQLite
 - Frontend: HTML templates (with Django's templating engine)
 - Dependencies: Managed via Pipenv (see Pipfile for details, including Django and related - packages)
@@ -19,19 +19,19 @@ Simple Templates: Basic HTML templates for rendering pages, with potential for e
 ## Installation
 
 ### Clone the Repository:
-``
+```
 textgit clone https://github.com/PiezoGo/Blogging-Website.git
 cd Blogging-Website
-``
+```
 
 ### Set Up Virtual Environment (using Pipenv):
-``
+```
 pip install pipenv
 pipenv install
 pipenv shell
-``
+```
 ### Apply Migrations:textpython manage.py makemigrations
-``python manage.py migrate``
+```python manage.py migrate```
 Create Superuser (optional, for admin access):textpython manage.py createsuperuser
 Run the Server:textpython manage.py runserverOpen your browser and navigate to http://127.0.0.1:8000/ to access the site.
 
@@ -59,11 +59,11 @@ Contributions are welcome! Feel free to fork the repository, make improvements (
 
 ### Fork the repo.
 Create a new branch: 
-``git checkout -b feature-branch``
+```git checkout -b feature-branch```
 Commit your changes: 
-``git commit -m 'Add some feature``
+```git commit -m 'Add some feature```
 Push to the branch: 
-``git push origin feature-branch``
+```git push origin feature-branch```
 Open a pull request.
 
 ## License
