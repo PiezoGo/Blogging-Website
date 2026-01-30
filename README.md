@@ -58,16 +58,13 @@ db.sqlite3: SQLite database file (do not commit sensitive data).
 Contributions are welcome! Feel free to fork the repository, make improvements (e.g., adding CSS styling, animations, or advanced features like comments/search), and submit a pull request.
 
 ### Fork the repo.
-Create a new branch: 
+- Create a new branch: 
 ```git checkout -b feature-branch```
-Commit your changes: 
+- Commit your changes: 
 ```git commit -m 'Add some feature```
-Push to the branch: 
+- Push to the branch: 
 ```git push origin feature-branch```
-Open a pull request.
+- Open a pull request.
 
-## License
-This project is open-source and available under the MIT License. See the LICENSE file for details (if not present, assume MIT).
-Contact
-For questions or suggestions, open an issue on GitHub or reach out to the repository owner.
+
 Last updated: January 2026
