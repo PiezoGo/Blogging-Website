@@ -1,12 +1,17 @@
-{% extends  'base.html' %}
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
 
 {% block content %}
-
-<form action="" method="post">
+<div class="form-page">
+  <h1>Sign up</h1>
+  <form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Sign Up</button>
-</form>
-
-{% endblock content %}
-
+    <div class="form-actions">
+      <button type="submit" class="animated-button brutalist-btn">Sign up</button>
+      <a href="{% url 'login' %}" class="brutalist-btn" style="margin-left: 0.5rem;">Log in</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

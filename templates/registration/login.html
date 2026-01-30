@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block title %}Login{% endblock %}
 
-<form method="post">
+{% block content %}
+<div class="form-page">
+  <h1>Log in</h1>
+  <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Log in</button>
-</form>
-
-{% endblock content %}
+    <div class="form-actions">
+      <button type="submit" class="animated-button brutalist-btn">Log in</button>
+      <a href="{% url 'signup' %}" class="brutalist-btn" style="margin-left: 0.5rem;">Register</a>
+    </div>
+    <input type="hidden" name="next" value="{{ next }}">
+  </form>
+</div>
+{% endblock %}

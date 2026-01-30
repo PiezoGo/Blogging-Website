@@ -1,0 +1,34 @@
+<aside class="sidebar">
+    <section class="sidebar-block sidebar-bio">
+        <h3 class="sidebar-title">Author Bio</h3>
+        <p>Brutal Blog. Minimal layout. Concrete &amp; black. No fluff—just words.</p>
+    </section>
+    <section class="sidebar-block">
+        <h3 class="sidebar-title">Recent Posts</h3>
+        <ul class="sidebar-list">
+            {% for post in recent_sidebar_posts %}
+            <li><a href="{% url 'post_detail' post.pk %}">{{ post.title|truncatewords:6 }}</a></li>
+            {% empty %}
+            <li>No posts yet.</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section class="sidebar-block">
+        <h3 class="sidebar-title">Tags</h3>
+        <ul class="sidebar-tags">
+            {% for tag in sidebar_tags %}
+            <li><a href="{% url 'search' %}?q={{ tag.name|urlencode }}">{{ tag.name }}</a></li>
+            {% empty %}
+            <li>No tags yet.</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section class="sidebar-block">
+        <h3 class="sidebar-title">Subscribe</h3>
+        <form class="sidebar-subscribe" action="#" method="post">
+            {% csrf_token %}
+            <input type="email" name="email" placeholder="your@email.com" class="brutalist-input" required aria-label="Email">
+            <button type="submit" class="animated-button brutalist-btn">Subscribe</button>
+        </form>
+    </section>
+</aside>

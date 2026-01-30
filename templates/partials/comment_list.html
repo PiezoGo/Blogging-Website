@@ -1,0 +1,7 @@
+{% for comment in comments %}
+<li class="comment-item">
+  <div class="author">{{ comment.author.username }}</div>
+  <div class="date">{{ comment.created_at|date:"M d, Y H:i" }}</div>
+  <div class="body">{{ comment.body|linebreaks }}</div>
+</li>
+{% endfor %}

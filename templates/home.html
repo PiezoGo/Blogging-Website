@@ -1,12 +1,32 @@
 {% extends 'base.html' %}
 
+{% block title %}Home{% endblock %}
+
 {% block content %}
+<section class="hero fade-in">
+  <h1>BRUTAL BLOG</h1>
+  <p>Raw words. No fluff. Concrete &amp; black.</p>
+  {% if featured %}
+  <a href="{% url 'post_detail' featured.pk %}" class="animated-button brutalist-btn">Read latest</a>
+  {% else %}
+  <a href="{% url 'post_list' %}" class="animated-button brutalist-btn">View all posts</a>
+  {% endif %}
+</section>
 
-{% for post in object_list %}
-	<div class="post-entry">
-		<h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-		<p>{{ post.body }}</p>
-	</div>
-{% endfor %}
-
-{% endblock content %}
+<section class="recent-section">
+  <h2>Recent</h2>
+  <div class="post-grid">
+    {% for post in recent_posts %}
+    <article class="post-card fade-in">
+      <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+      <div class="meta">{{ post.author.username }} · {{ post.created_at|date:"M d, Y" }}</div>
+      <p class="excerpt">{{ post.get_excerpt }}</p>
+      <a href="{% url 'post_detail' post.pk %}" class="brutalist-btn">Read</a>
+    </article>
+    {% empty %}
+    <p>No posts yet. <a href="{% url 'post_new' %}">Write the first one</a>.</p>
+    {% endfor %}
+  </div>
+  <p style="margin-top: 1.5rem;"><a href="{% url 'post_list' %}" class="animated-button brutalist-btn">All posts</a></p>
+</section>
+{% endblock %}
