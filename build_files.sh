@@ -1,10 +1,11 @@
 #!/bin/bash
 
+# Upgrade pip and install dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
 
-# Collect static files (VERY IMPORTANT for admin, CSS, etc.)
-python manage.py collectstatic --noinput
+# Collect static files – this is crucial!
+python manage.py collectstatic --noinput --clear
 
-# Optional: migrate if you have DB (but Vercel usually uses external DB like Neon/Supabase)
+# Optional: apply migrations if you add a real DB later
 # python manage.py migrate
